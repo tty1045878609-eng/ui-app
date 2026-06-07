@@ -461,7 +461,8 @@
     .phone:has(#petcare.active),
     .phone:has(#messages.active),
     .phone:has(#profile.active),
-    .phone:has(#trade.active) {
+    .phone:has(#trade.active),
+    .phone:has(#ai.active) {
       background: #fff;
     }
 
@@ -479,7 +480,8 @@
 
     .phone:has(#addpet.active) .tabbar,
     .phone:has(#completepet.active) .tabbar,
-    .phone:has(#trade.active) .tabbar {
+    .phone:has(#trade.active) .tabbar,
+    .phone:has(#ai.active) .tabbar {
       display: none;
     }
 
@@ -518,6 +520,7 @@
     .messages-full,
     .profile-full,
     .trade-full,
+    .ai-full,
     .addpet-full,
     .completepet-full {
       position: relative;
@@ -531,6 +534,7 @@
     .messages-full-img,
     .profile-full-img,
     .trade-full-img,
+    .ai-full-img,
     .addpet-full-img,
     .completepet-full-img {
       width: 402px;
@@ -557,6 +561,12 @@
     }
 
     .trade-screen {
+      min-height: 100vh;
+      padding: 0;
+      background: #fff;
+    }
+
+    .ai-screen {
       min-height: 100vh;
       padding: 0;
       background: #fff;
@@ -905,7 +915,7 @@
           </nav>
 
           <div class="promo-pair">
-            <button class="promo-img-btn" data-toast="AI 问诊已打开">
+            <button class="promo-img-btn" data-screen="ai">
               <img src="assets/cutouts/AI问诊.png" alt="AI问诊 24h在线医生 立即查看" />
             </button>
             <button class="promo-img-btn" data-toast="品牌严选专区">
@@ -1044,6 +1054,22 @@
         <button class="hotspot" style="left: 204px; top: 416px; width: 184px; height: 286px;" data-toast="金渐层英国短毛猫 $4899">pet card</button>
         <button class="hotspot" style="left: 14px; top: 710px; width: 184px; height: 164px;" data-toast="金渐层英国短毛猫 $4899">pet card</button>
         <button class="hotspot" style="left: 204px; top: 710px; width: 184px; height: 164px;" data-toast="金渐层英国短毛猫 $4899">pet card</button>
+      </div>
+    </section>
+
+    <section id="ai" class="screen ai-screen">
+      <div class="ai-full">
+        <img class="ai-full-img" src="assets/cutouts/ai-full.png" alt="AI问诊" />
+        <button class="hotspot" style="left: 10px; top: 58px; width: 42px; height: 42px;" data-screen="home">back</button>
+        <button class="hotspot" style="left: 354px; top: 66px; width: 38px; height: 36px;" data-toast="更多">more</button>
+        <button class="hotspot" style="left: 0; top: 116px; width: 402px; height: 58px;" data-toast="选择推荐问题">question chips</button>
+        <button class="hotspot" style="left: 30px; top: 690px; width: 48px; height: 48px;" data-toast="语音输入">voice</button>
+        <button class="hotspot" style="left: 78px; top: 690px; width: 258px; height: 48px;" data-toast="有问题尽管问我~">input</button>
+        <button class="hotspot" style="left: 342px; top: 690px; width: 40px; height: 48px;" data-toast="添加内容">add</button>
+        <button class="hotspot" style="left: 47px; top: 752px; width: 68px; height: 96px;" data-toast="历史记录">history</button>
+        <button class="hotspot" style="left: 133px; top: 752px; width: 68px; height: 96px;" data-toast="病例库">cases</button>
+        <button class="hotspot" style="left: 219px; top: 752px; width: 68px; height: 96px;" data-toast="医疗库">medical</button>
+        <button class="hotspot" style="left: 305px; top: 752px; width: 68px; height: 96px;" data-toast="添加图片">image</button>
       </div>
     </section>
 
