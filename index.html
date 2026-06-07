@@ -462,7 +462,8 @@
     .phone:has(#messages.active),
     .phone:has(#profile.active),
     .phone:has(#trade.active),
-    .phone:has(#ai.active) {
+    .phone:has(#ai.active),
+    .phone:has(#shop.active) {
       background: #fff;
     }
 
@@ -481,7 +482,8 @@
     .phone:has(#addpet.active) .tabbar,
     .phone:has(#completepet.active) .tabbar,
     .phone:has(#trade.active) .tabbar,
-    .phone:has(#ai.active) .tabbar {
+    .phone:has(#ai.active) .tabbar,
+    .phone:has(#shop.active) .tabbar {
       display: none;
     }
 
@@ -521,6 +523,7 @@
     .profile-full,
     .trade-full,
     .ai-full,
+    .shop-full,
     .addpet-full,
     .completepet-full {
       position: relative;
@@ -535,6 +538,7 @@
     .profile-full-img,
     .trade-full-img,
     .ai-full-img,
+    .shop-full-img,
     .addpet-full-img,
     .completepet-full-img {
       width: 402px;
@@ -567,6 +571,12 @@
     }
 
     .ai-screen {
+      min-height: 100vh;
+      padding: 0;
+      background: #fff;
+    }
+
+    .shop-screen {
       min-height: 100vh;
       padding: 0;
       background: #fff;
@@ -900,7 +910,7 @@
               <img src="assets/cutouts/image 141.png" alt="" />
               <span>交易</span>
             </button>
-            <button class="quick" data-toast="进入商店">
+            <button class="quick" data-screen="shop">
               <img src="assets/cutouts/image 136.png" alt="" />
               <span>商店</span>
             </button>
@@ -1070,6 +1080,29 @@
         <button class="hotspot" style="left: 133px; top: 752px; width: 68px; height: 96px;" data-toast="病例库">cases</button>
         <button class="hotspot" style="left: 219px; top: 752px; width: 68px; height: 96px;" data-toast="医疗库">medical</button>
         <button class="hotspot" style="left: 305px; top: 752px; width: 68px; height: 96px;" data-toast="添加图片">image</button>
+      </div>
+    </section>
+
+    <section id="shop" class="screen shop-screen">
+      <div class="shop-full">
+        <img class="shop-full-img" src="assets/cutouts/shop-full.png" alt="商城" />
+        <button class="hotspot" style="left: 9px; top: 56px; width: 42px; height: 38px;" data-screen="home">back</button>
+        <button class="hotspot" style="left: 132px; top: 58px; width: 226px; height: 38px;" data-toast="搜索：新年第一拍">search</button>
+        <button class="hotspot" style="left: 365px; top: 57px; width: 30px; height: 38px;" data-toast="购物车">cart</button>
+        <button class="hotspot" style="left: 14px; top: 108px; width: 374px; height: 115px;" data-toast="限时秒杀1折起">flash sale</button>
+        <button class="hotspot" style="left: 14px; top: 235px; width: 103px; height: 125px;" data-toast="萌宠生活圈">life circle</button>
+        <button class="hotspot" style="left: 128px; top: 235px; width: 260px; height: 125px;" data-toast="热门主题">hot topics</button>
+        <button class="hotspot" style="left: 28px; top: 406px; width: 52px; height: 60px;" data-toast="主食">food</button>
+        <button class="hotspot" style="left: 105px; top: 406px; width: 52px; height: 60px;" data-toast="清洁">clean</button>
+        <button class="hotspot" style="left: 180px; top: 406px; width: 52px; height: 60px;" data-toast="日常">daily</button>
+        <button class="hotspot" style="left: 258px; top: 406px; width: 52px; height: 60px;" data-toast="玩具">toy</button>
+        <button class="hotspot" style="left: 334px; top: 406px; width: 52px; height: 60px;" data-toast="保健">health</button>
+        <button class="hotspot" style="left: 27px; top: 523px; width: 50px; height: 30px;" data-toast="猫咪商品">cat goods</button>
+        <button class="hotspot" style="left: 91px; top: 523px; width: 54px; height: 30px;" data-toast="狗狗商品">dog goods</button>
+        <button class="hotspot" style="left: 155px; top: 523px; width: 62px; height: 30px;" data-toast="异宠商品">exotic goods</button>
+        <button class="hotspot" style="left: 354px; top: 523px; width: 34px; height: 30px;" data-toast="更多分类">more</button>
+        <button class="hotspot" style="left: 14px; top: 568px; width: 184px; height: 294px;" data-toast="布兰德软罐头全价猫主食包 $25">product</button>
+        <button class="hotspot" style="left: 204px; top: 568px; width: 184px; height: 294px;" data-toast="布兰德软罐头全价猫主食包 $25">product</button>
       </div>
     </section>
 
