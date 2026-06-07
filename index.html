@@ -567,7 +567,8 @@
     .phone:has(#community.active),
     .phone:has(#petcare.active),
     .phone:has(#messages.active),
-    .phone:has(#profile.active) {
+    .phone:has(#profile.active),
+    .phone:has(#trade.active) {
       background: #fff;
     }
 
@@ -584,7 +585,8 @@
     }
 
     .phone:has(#addpet.active) .tabbar,
-    .phone:has(#completepet.active) .tabbar {
+    .phone:has(#completepet.active) .tabbar,
+    .phone:has(#trade.active) .tabbar {
       display: none;
     }
 
@@ -622,6 +624,7 @@
     .petcare-full,
     .messages-full,
     .profile-full,
+    .trade-full,
     .addpet-full,
     .completepet-full {
       position: relative;
@@ -634,6 +637,7 @@
     .petcare-full-img,
     .messages-full-img,
     .profile-full-img,
+    .trade-full-img,
     .addpet-full-img,
     .completepet-full-img {
       width: 402px;
@@ -654,6 +658,12 @@
     }
 
     .profile-screen {
+      min-height: 100vh;
+      padding: 0;
+      background: #fff;
+    }
+
+    .trade-screen {
       min-height: 100vh;
       padding: 0;
       background: #fff;
@@ -992,7 +1002,7 @@
           </section>
 
           <nav class="quick-grid" aria-label="快捷入口">
-            <button class="quick" data-toast="进入交易市场">
+            <button class="quick" data-screen="trade">
               <img src="assets/cutouts/image 141.png" alt="" />
               <span>交易</span>
             </button>
@@ -1126,6 +1136,30 @@
         <button class="hotspot" style="left: 204px; top: 612px; width: 181px; height: 38px;" data-toast="草稿箱">drafts</button>
         <button class="hotspot" style="left: 16px; top: 660px; width: 181px; height: 38px;" data-toast="我的话题">topics</button>
         <button class="hotspot" style="left: 204px; top: 660px; width: 181px; height: 38px;" data-toast="我的关注">following</button>
+      </div>
+    </section>
+
+    <section id="trade" class="screen trade-screen">
+      <div class="trade-full">
+        <img class="trade-full-img" src="assets/cutouts/trade-full.png" alt="萌宠交易" />
+        <button class="hotspot" style="left: 9px; top: 55px; width: 42px; height: 36px;" data-screen="home">back</button>
+        <button class="hotspot" style="left: 14px; top: 101px; width: 374px; height: 39px;" data-toast="搜索：新年第一拍">search</button>
+        <button class="hotspot" style="left: 14px; top: 153px; width: 374px; height: 58px;" data-toast="消费者购宠保障">banner</button>
+        <button class="hotspot" style="left: 28px; top: 230px; width: 50px; height: 30px;" data-toast="猫咪分类">cat</button>
+        <button class="hotspot" style="left: 89px; top: 230px; width: 54px; height: 30px;" data-toast="狗狗分类">dog</button>
+        <button class="hotspot" style="left: 156px; top: 230px; width: 62px; height: 30px;" data-toast="异宠分类">exotic</button>
+        <button class="hotspot" style="left: 16px; top: 279px; width: 58px; height: 73px;" data-toast="全部猫咪">all cats</button>
+        <button class="hotspot" style="left: 83px; top: 291px; width: 58px; height: 61px;" data-toast="英短">breed</button>
+        <button class="hotspot" style="left: 169px; top: 291px; width: 58px; height: 61px;" data-toast="美短">breed</button>
+        <button class="hotspot" style="left: 258px; top: 291px; width: 58px; height: 61px;" data-toast="缅因">breed</button>
+        <button class="hotspot" style="left: 335px; top: 291px; width: 52px; height: 61px;" data-toast="布偶">breed</button>
+        <button class="hotspot" style="left: 22px; top: 374px; width: 132px; height: 28px;" data-toast="北京大兴龙湖天">location</button>
+        <button class="hotspot" style="left: 167px; top: 374px; width: 134px; height: 28px;" data-toast="按上新时间排序">sort</button>
+        <button class="hotspot" style="left: 332px; top: 374px; width: 48px; height: 28px;" data-toast="筛选">filter</button>
+        <button class="hotspot" style="left: 14px; top: 416px; width: 184px; height: 286px;" data-toast="金渐层英国短毛猫 $4899">pet card</button>
+        <button class="hotspot" style="left: 204px; top: 416px; width: 184px; height: 286px;" data-toast="金渐层英国短毛猫 $4899">pet card</button>
+        <button class="hotspot" style="left: 14px; top: 710px; width: 184px; height: 164px;" data-toast="金渐层英国短毛猫 $4899">pet card</button>
+        <button class="hotspot" style="left: 204px; top: 710px; width: 184px; height: 164px;" data-toast="金渐层英国短毛猫 $4899">pet card</button>
       </div>
     </section>
 
