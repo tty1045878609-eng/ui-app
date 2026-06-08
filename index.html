@@ -567,7 +567,8 @@
     .phone:has(#ai.active) .tabbar,
     .phone:has(#shop.active) .tabbar,
     .phone:has(#signin.active) .tabbar,
-    .phone:has(#mypets.active) .tabbar {
+    .phone:has(#mypets.active) .tabbar,
+    .phone:has(#productDetail.active) .tabbar {
       display: none;
     }
 
@@ -674,6 +675,223 @@
       min-height: 100vh;
       padding: 0;
       background: #fff;
+    }
+
+    .detail-screen {
+      min-height: 100vh;
+      padding: 0 0 86px;
+      background: #f7f7fb;
+      color: #171717;
+    }
+
+    .detail-hero {
+      position: relative;
+      height: 390px;
+      display: grid;
+      place-items: center;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .detail-back,
+    .detail-share {
+      position: absolute;
+      top: 47px;
+      width: 40px;
+      height: 40px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,.72);
+      color: #111;
+      font-size: 34px;
+      line-height: 34px;
+      z-index: 2;
+    }
+
+    .detail-back {
+      left: 15px;
+    }
+
+    .detail-share {
+      right: 16px;
+      font-size: 25px;
+      line-height: 38px;
+    }
+
+    .detail-main-img {
+      width: 312px;
+      height: 312px;
+      object-fit: contain;
+      filter: drop-shadow(0 16px 22px rgba(25, 28, 38, .12));
+    }
+
+    .detail-page-dot {
+      position: absolute;
+      right: 20px;
+      bottom: 18px;
+      min-width: 42px;
+      height: 26px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      background: rgba(28,28,30,.46);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .detail-card {
+      margin: 10px 9px 0;
+      padding: 18px 16px;
+      border-radius: 17px;
+      background: #fff;
+      box-shadow: 0 8px 22px rgba(20, 28, 48, .04);
+    }
+
+    .detail-price {
+      color: #ff1744;
+      font-size: 34px;
+      line-height: 1;
+      font-weight: 900;
+    }
+
+    .detail-price small {
+      font-size: 18px;
+    }
+
+    .detail-coupons {
+      margin-top: 9px;
+      display: flex;
+      gap: 13px;
+      color: #e64166;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .detail-title {
+      margin: 14px 0 8px;
+      font-size: 19px;
+      line-height: 1.28;
+      font-weight: 900;
+    }
+
+    .detail-chip {
+      display: inline-flex;
+      height: 24px;
+      align-items: center;
+      padding: 0 8px;
+      border: 1px solid #ececf1;
+      color: #848890;
+      font-size: 12px;
+    }
+
+    .detail-beans {
+      margin-top: 18px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      border-radius: 20px;
+      background: linear-gradient(90deg, #1f1f1f 0 31%, #ffe9c3 31% 100%);
+      color: #6b4b11;
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .detail-beans span:first-child {
+      width: 118px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .detail-beans span:last-child {
+      flex: 1;
+      text-align: center;
+    }
+
+    .detail-info {
+      display: grid;
+      gap: 0;
+      padding: 8px 16px;
+    }
+
+    .detail-row {
+      display: grid;
+      grid-template-columns: 50px 1fr 16px;
+      align-items: center;
+      min-height: 48px;
+      border-bottom: 1px solid #f0f1f4;
+      font-size: 16px;
+    }
+
+    .detail-row:last-child { border-bottom: 0; }
+    .detail-row b { color: #a7abb2; font-weight: 500; }
+    .detail-row span { color: #25272c; }
+    .detail-row i { color: #a7abb2; font-style: normal; text-align: right; }
+
+    .detail-review {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 68px;
+      font-size: 21px;
+      font-weight: 900;
+    }
+
+    .detail-review span:last-child {
+      color: #aaaeb6;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .detail-bottom {
+      position: fixed;
+      z-index: 60;
+      left: 50%;
+      bottom: 0;
+      width: min(100vw, var(--phone-w));
+      height: 76px;
+      padding: 8px 10px 10px;
+      transform: translateX(-50%);
+      display: grid;
+      grid-template-columns: 52px 52px 52px 1fr 1fr;
+      gap: 6px;
+      align-items: center;
+      background: #fff;
+      box-shadow: 0 -8px 18px rgba(20, 28, 48, .05);
+    }
+
+    .detail-tool {
+      border: 0;
+      background: transparent;
+      color: #222;
+      font-size: 11px;
+    }
+
+    .detail-tool b {
+      display: block;
+      margin-bottom: 2px;
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 500;
+    }
+
+    .detail-buy {
+      height: 52px;
+      border: 0;
+      border-radius: 26px;
+      font-size: 17px;
+      font-weight: 900;
+    }
+
+    .detail-cart {
+      background: #fff0f2;
+      color: #f22250;
+    }
+
+    .detail-now {
+      background: #ff214f;
+      color: #fff;
     }
 
     .addpet-screen {
@@ -1036,7 +1254,7 @@
             <span class="deal-price p1">$9.99卷后价</span>
             <span class="deal-price p2">$9.99卷后价</span>
             <span class="deal-price p3">$9.99卷后价</span>
-            <button class="hotspot" style="inset: 0; border-radius: 9px;" data-toast="年货精选活动">deal</button>
+            <button class="hotspot" style="inset: 0; border-radius: 9px;" data-product-detail data-title="年货精选宠物零食礼包" data-price="9.99" data-image="assets/cutouts/image 282.png" data-spec="组合装 x1">deal</button>
           </section>
 
           <div class="section-row">
@@ -1045,21 +1263,21 @@
           </div>
 
           <section class="products">
-            <article class="product-card">
+            <article class="product-card" data-product-detail data-title="全期全价犬粮 有机牛肉配方" data-price="24" data-image="assets/cutouts/ec1308a024adccd766e4af83617c5f1f 1.png" data-spec="350g x1">
               <div class="product-img"><img src="assets/cutouts/ec1308a024adccd766e4af83617c5f1f 1.png" alt="" /></div>
               <h3 class="product-title">全期全价犬粮</h3>
               <p class="product-desc">有机牛肉配方</p>
               <strong class="product-price">$24</strong>
               <button class="add-btn" data-add>+</button>
             </article>
-            <article class="product-card">
+            <article class="product-card" data-product-detail data-title="MYUMI 牛肉味犬粮" data-price="24" data-image="assets/cutouts/ec1308a024adccd766e4af83617c5f1f 1-1.png" data-spec="350g x1">
               <div class="product-img"><img src="assets/cutouts/ec1308a024adccd766e4af83617c5f1f 1-1.png" alt="" /></div>
               <h3 class="product-title">全期全价犬粮</h3>
               <p class="product-desc">有机牛肉配方</p>
               <strong class="product-price">$24</strong>
               <button class="add-btn" data-add>+</button>
             </article>
-            <article class="product-card">
+            <article class="product-card" data-product-detail data-title="MACED 椰子羊肉宠物零食" data-price="24" data-image="assets/cutouts/8ff79d967713e96e66f5fe343d9566d5 1.png" data-spec="500g x1">
               <div class="product-img"><img src="assets/cutouts/8ff79d967713e96e66f5fe343d9566d5 1.png" alt="" /></div>
               <h3 class="product-title">全期全价犬粮</h3>
               <p class="product-desc">有机牛肉配方</p>
@@ -1159,10 +1377,10 @@
         <button class="hotspot" style="left: 22px; top: 374px; width: 132px; height: 28px;" data-toast="北京大兴龙湖天">location</button>
         <button class="hotspot" style="left: 167px; top: 374px; width: 134px; height: 28px;" data-toast="按上新时间排序">sort</button>
         <button class="hotspot" style="left: 332px; top: 374px; width: 48px; height: 28px;" data-toast="筛选">filter</button>
-        <button class="hotspot" style="left: 14px; top: 416px; width: 184px; height: 286px;" data-toast="金渐层英国短毛猫 $4899">pet card</button>
-        <button class="hotspot" style="left: 204px; top: 416px; width: 184px; height: 286px;" data-toast="金渐层英国短毛猫 $4899">pet card</button>
-        <button class="hotspot" style="left: 14px; top: 710px; width: 184px; height: 164px;" data-toast="金渐层英国短毛猫 $4899">pet card</button>
-        <button class="hotspot" style="left: 204px; top: 710px; width: 184px; height: 164px;" data-toast="金渐层英国短毛猫 $4899">pet card</button>
+        <button class="hotspot" style="left: 14px; top: 416px; width: 184px; height: 286px;" data-product-detail data-title="金渐层英国短毛猫 6个月21天" data-price="4899" data-image="assets/cutouts/trade-pet-1.png" data-spec="疫苗1针 / 驱虫1次">pet card</button>
+        <button class="hotspot" style="left: 204px; top: 416px; width: 184px; height: 286px;" data-product-detail data-title="金渐层英国短毛猫 6个月21天" data-price="4899" data-image="assets/cutouts/trade-pet-2.png" data-spec="疫苗1针 / 驱虫1次">pet card</button>
+        <button class="hotspot" style="left: 14px; top: 710px; width: 184px; height: 164px;" data-product-detail data-title="金渐层英国短毛猫 6个月21天" data-price="4899" data-image="assets/cutouts/trade-pet-3.png" data-spec="疫苗1针 / 驱虫1次">pet card</button>
+        <button class="hotspot" style="left: 204px; top: 710px; width: 184px; height: 164px;" data-product-detail data-title="金渐层英国短毛猫 6个月21天" data-price="4899" data-image="assets/cutouts/trade-pet-4.png" data-spec="疫苗1针 / 驱虫1次">pet card</button>
       </div>
     </section>
 
@@ -1200,8 +1418,8 @@
         <button class="hotspot" style="left: 91px; top: 523px; width: 54px; height: 30px;" data-toast="狗狗商品">dog goods</button>
         <button class="hotspot" style="left: 155px; top: 523px; width: 62px; height: 30px;" data-toast="异宠商品">exotic goods</button>
         <button class="hotspot" style="left: 354px; top: 523px; width: 34px; height: 30px;" data-toast="更多分类">more</button>
-        <button class="hotspot" style="left: 14px; top: 568px; width: 184px; height: 294px;" data-toast="布兰德软罐头全价猫主食包 $25">product</button>
-        <button class="hotspot" style="left: 204px; top: 568px; width: 184px; height: 294px;" data-toast="布兰德软罐头全价猫主食包 $25">product</button>
+        <button class="hotspot" style="left: 14px; top: 568px; width: 184px; height: 294px;" data-product-detail data-title="布兰德软罐头全价猫主食包（鸡肉味）" data-price="25" data-image="assets/cutouts/shop-product-1.png" data-spec="鸡肉味 x1">product</button>
+        <button class="hotspot" style="left: 204px; top: 568px; width: 184px; height: 294px;" data-product-detail data-title="布兰德软罐头全价猫主食包（鸡肉味）" data-price="25" data-image="assets/cutouts/shop-product-2.png" data-spec="鸡肉味 x1">product</button>
       </div>
     </section>
 
@@ -1238,6 +1456,43 @@
       </div>
     </section>
 
+    <section id="productDetail" class="screen detail-screen">
+      <div class="detail-hero">
+        <button class="detail-back" data-product-back>‹</button>
+        <button class="detail-share" data-toast="已打开分享">↗</button>
+        <img class="detail-main-img" id="detailImage" src="assets/cutouts/ec1308a024adccd766e4af83617c5f1f 1.png" alt="" />
+        <span class="detail-page-dot">1/3</span>
+      </div>
+
+      <section class="detail-card">
+        <div class="detail-price">¥<span id="detailPrice">24</span><small>.00</small></div>
+        <div class="detail-coupons"><span>领：满0.01打3折</span><span>领：满0.01打5折</span></div>
+        <h2 class="detail-title" id="detailTitle">全期全价犬粮 有机牛肉配方</h2>
+        <span class="detail-chip">24小时发货</span>
+        <div class="detail-beans"><span>🫘 返胖豆</span><span>V1会员预计返36胖豆 ›</span></div>
+      </section>
+
+      <section class="detail-card detail-info">
+        <div class="detail-row"><b>保障</b><span>✓ 品牌正品　✓ 满49元包邮　✓ 极速退款</span><i>›</i></div>
+        <div class="detail-row"><b>选择</b><span id="detailSpec">350g x1</span><i>›</i></div>
+        <div class="detail-row"><b>物流</b><span>满49元包邮</span><i></i></div>
+        <div class="detail-row"><b>参数</b><span>品牌、功效、有效期</span><i>›</i></div>
+      </section>
+
+      <section class="detail-card detail-review">
+        <span>评价(6)</span>
+        <span>查看全部 ›</span>
+      </section>
+
+      <div class="detail-bottom">
+        <button class="detail-tool" data-toast="客服已打开"><b>☏</b>客服</button>
+        <button class="detail-tool" data-toast="已收藏"><b>☆</b>收藏</button>
+        <button class="detail-tool" data-toast="购物车已打开"><b>🛒</b>购物车</button>
+        <button class="detail-buy detail-cart" data-toast="已加入购物车">加入购物车</button>
+        <button class="detail-buy detail-now" data-toast="立即购买">立即购买</button>
+      </div>
+    </section>
+
     <nav class="tabbar">
       <button class="tab active" data-screen="home"><img src="assets/cutouts/home.png" alt="" /><span>精选</span></button>
       <button class="tab" data-screen="community"><img src="assets/cutouts/groups.png" alt="" /><span>社区</span></button>
@@ -1261,10 +1516,11 @@
     const tabs = document.querySelectorAll(".tab");
     const toast = document.getElementById("toast");
     const modal = document.getElementById("modal");
-    const screenOrder = ["home", "community", "petcare", "messages", "profile", "trade", "shop", "ai", "signin", "mypets", "addpet", "completepet"];
+    const screenOrder = ["home", "community", "petcare", "messages", "profile", "trade", "shop", "ai", "signin", "mypets", "addpet", "completepet", "productDetail"];
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let toastTimer;
     let transitionTimer;
+    let lastProductScreen = "home";
 
     function showToast(text) {
       clearTimeout(toastTimer);
@@ -1317,7 +1573,23 @@
       setTimeout(() => tab.classList.remove("is-pressing"), 230);
     }
 
+    function openProductDetail(source) {
+      const activeScreen = document.querySelector(".screen.active");
+      lastProductScreen = activeScreen?.id || "home";
+      document.getElementById("detailImage").src = source.dataset.image || "assets/cutouts/ec1308a024adccd766e4af83617c5f1f 1.png";
+      document.getElementById("detailTitle").textContent = source.dataset.title || "宠物精选商品";
+      document.getElementById("detailPrice").textContent = source.dataset.price || "24";
+      document.getElementById("detailSpec").textContent = source.dataset.spec || "默认规格 x1";
+      switchScreen("productDetail");
+    }
+
     document.addEventListener("click", event => {
+      const productBackButton = event.target.closest("[data-product-back]");
+      if (productBackButton) {
+        switchScreen(lastProductScreen);
+        return;
+      }
+
       const screenButton = event.target.closest("[data-screen]");
       if (screenButton) {
         if (screenButton.classList.contains("tab")) playTabFeedback(screenButton);
@@ -1343,6 +1615,12 @@
         addButton.textContent = "✓";
         showToast("已加入购物车");
         setTimeout(() => addButton.textContent = "+", 900);
+        return;
+      }
+
+      const productDetailButton = event.target.closest("[data-product-detail]");
+      if (productDetailButton) {
+        openProductDetail(productDetailButton);
         return;
       }
 
