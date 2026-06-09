@@ -230,8 +230,26 @@
       padding: 0;
     }
 
-    .quick img { width: 42px; height: 41px; object-fit: contain; }
+    .quick img {
+      width: 42px;
+      height: 41px;
+      object-fit: contain;
+      transform-origin: center;
+      transition: transform .24s cubic-bezier(.2, .78, .2, 1), filter .24s ease;
+      will-change: transform;
+    }
+
     .quick:first-child img { width: 42px; height: 40px; }
+
+    .quick:hover img,
+    .quick:focus-visible img {
+      transform: scale(1.12);
+      filter: drop-shadow(0 7px 10px rgba(255, 168, 0, .2));
+    }
+
+    .quick:active img {
+      transform: scale(1.06);
+    }
 
     .promo-pair {
       width: 370px;
