@@ -251,11 +251,25 @@
       border-radius: 14px;
       background: transparent;
       overflow: hidden;
+      transform: translateZ(0);
     }
 
     .promo-img-btn img {
       width: 180px;
       height: 93px;
+      transform-origin: 72% 50%;
+      transition: transform .24s cubic-bezier(.2, .78, .2, 1), filter .24s ease;
+      will-change: transform;
+    }
+
+    .promo-img-btn:hover img,
+    .promo-img-btn:focus-visible img {
+      transform: scale(1.045);
+      filter: drop-shadow(0 8px 12px rgba(255, 145, 20, .18));
+    }
+
+    .promo-img-btn:active img {
+      transform: scale(1.025);
     }
 
     .welfare-cut {
