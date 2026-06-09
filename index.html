@@ -198,10 +198,16 @@
 
     .vip-cut {
       width: 370px;
+      height: 174px;
       margin-top: -45px;
+      overflow: hidden;
+      border-radius: 18px;
     }
 
-    .vip-cut .cut { width: 370px; }
+    .vip-cut .cut {
+      width: 370px;
+      height: 174px;
+    }
 
     .motion-card-video {
       position: absolute;
@@ -1216,7 +1222,7 @@
           <section class="asset-block vip-cut" aria-label="会员好礼回馈">
             <img class="cut" src="assets/cutouts/Group 58.png" alt="会员好礼回馈 888" />
             <video class="motion-card-video" autoplay muted loop playsinline preload="metadata">
-              <source src="assets/motion/card-1.mp4" type="video/mp4" />
+              <source src="assets/motion/card-1-v2.mp4" type="video/mp4" />
             </video>
             <button class="hotspot" style="left: 0; top: 0; width: 370px; height: 174px;" data-toast="会员积分：888">vip</button>
           </section>
@@ -1543,6 +1549,14 @@
       toastTimer = setTimeout(() => toast.classList.remove("show"), 1500);
     }
 
+    function playMotionVideos() {
+      document.querySelectorAll(".motion-card-video").forEach(video => {
+        video.muted = true;
+        video.loop = true;
+        video.play().catch(() => {});
+      });
+    }
+
     function switchScreen(id) {
       const current = document.querySelector(".screen.active");
       const next = document.getElementById(id);
@@ -1577,6 +1591,7 @@
       transitionTimer = setTimeout(() => {
         current.classList.remove("active", "exiting", "reverse");
         next.classList.remove("entering", "reverse");
+        playMotionVideos();
       }, 390);
     }
 
@@ -1641,6 +1656,8 @@
       const toastButton = event.target.closest("[data-toast]");
       if (toastButton) showToast(toastButton.dataset.toast);
     });
+
+    playMotionVideos();
   </script>
 </body>
 </html>
