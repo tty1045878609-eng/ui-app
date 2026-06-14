@@ -1307,10 +1307,13 @@
 
     .modal.show { display: block; }
 
-    .signin-modal-img {
+    .signin-modal-media {
+      display: block;
       width: 402px;
       height: 874px;
       object-fit: cover;
+      object-position: center top;
+      pointer-events: none;
     }
   </style>
 </head>
@@ -1683,7 +1686,9 @@
 
   <div class="toast" id="toast"></div>
   <div class="modal" id="modal">
-    <img class="signin-modal-img" src="assets/cutouts/signin-modal-full.png" alt="签到领积分" />
+    <video class="signin-modal-media" autoplay muted loop playsinline preload="metadata" aria-label="签到领积分">
+      <source src="assets/motion/signin-modal.mp4" type="video/mp4" />
+    </video>
     <button class="hotspot" style="left: 9px; top: 55px; width: 42px; height: 42px;" data-screen="home">back</button>
     <button class="hotspot" style="left: 136px; top: 583px; width: 130px; height: 44px;" data-close-signin-modal>sign</button>
     <button class="hotspot" style="left: 281px; top: 395px; width: 74px; height: 32px;" data-toast="签到细则">rules</button>
@@ -1716,16 +1721,27 @@
       });
     }
 
+    function openSigninModal() {
+      modal.classList.add("show");
+      const signinVideo = modal.querySelector("video");
+      if (signinVideo) {
+        signinVideo.currentTime = 0;
+        signinVideo.play().catch(() => {});
+      }
+    }
+
     function switchScreen(id) {
       const current = document.querySelector(".screen.active");
       const next = document.getElementById(id);
       if (!next || current === next) {
-        modal.classList.toggle("show", id === "signin");
+        if (id === "signin") openSigninModal();
+        else modal.classList.remove("show");
         return;
       }
 
       tabs.forEach(tab => tab.classList.toggle("active", tab.dataset.screen === id));
-      modal.classList.toggle("show", id === "signin");
+      if (id === "signin") openSigninModal();
+      else modal.classList.remove("show");
       clearTimeout(transitionTimer);
       screens.forEach(screen => screen.classList.remove("entering", "exiting", "reverse"));
 
@@ -1787,7 +1803,7 @@
 
       const openSigninModalButton = event.target.closest("[data-open-signin-modal]");
       if (openSigninModalButton) {
-        modal.classList.add("show");
+        openSigninModal();
         return;
       }
 
