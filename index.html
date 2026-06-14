@@ -208,6 +208,15 @@
       height: auto;
     }
 
+    .vip-cut .vip-video {
+      display: block;
+      width: 370px;
+      height: 213px;
+      object-fit: cover;
+      object-position: center top;
+      pointer-events: none;
+    }
+
     .quick-grid {
       width: 358px;
       margin: 25px auto 0;
@@ -1331,7 +1340,9 @@
 
         <div class="home-content">
           <section class="asset-block vip-cut" aria-label="会员好礼回馈">
-            <img class="cut" src="assets/cutouts/Group 58.png" alt="会员好礼回馈 888" />
+            <video class="vip-video" autoplay muted loop playsinline preload="metadata" aria-label="会员好礼回馈 888">
+              <source src="assets/motion/home-vip.mp4" type="video/mp4" />
+            </video>
             <button class="hotspot" style="left: 0; top: 0; width: 370px; height: 213px;" data-toast="会员积分：888">vip</button>
           </section>
 
