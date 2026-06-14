@@ -1307,13 +1307,12 @@
 
     .modal.show { display: block; }
 
-    .signin-modal-media {
+    .signin-modal-img {
       display: block;
       width: 402px;
       height: 874px;
       object-fit: cover;
       object-position: center top;
-      background: #fff url("assets/cutouts/signin-modal-full.png") center top / cover no-repeat;
       pointer-events: none;
     }
   </style>
@@ -1687,9 +1686,7 @@
 
   <div class="toast" id="toast"></div>
   <div class="modal" id="modal">
-    <video class="signin-modal-media" autoplay muted loop playsinline preload="metadata" poster="assets/cutouts/signin-modal-full.png" aria-label="签到领积分">
-      <source src="assets/motion/signin-modal.mp4" type="video/mp4" />
-    </video>
+    <img class="signin-modal-img" src="assets/cutouts/signin-modal-full.png" alt="签到领积分" />
     <button class="hotspot" style="left: 9px; top: 55px; width: 42px; height: 42px;" data-screen="home">back</button>
     <button class="hotspot" style="left: 136px; top: 583px; width: 130px; height: 44px;" data-close-signin-modal>sign</button>
     <button class="hotspot" style="left: 281px; top: 395px; width: 74px; height: 32px;" data-toast="签到细则">rules</button>
@@ -1724,11 +1721,6 @@
 
     function openSigninModal() {
       modal.classList.add("show");
-      const signinVideo = modal.querySelector("video");
-      if (signinVideo) {
-        signinVideo.currentTime = 0;
-        signinVideo.play().catch(() => {});
-      }
     }
 
     function switchScreen(id) {
