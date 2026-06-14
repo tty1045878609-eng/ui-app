@@ -1337,6 +1337,18 @@
       background: transparent;
       pointer-events: none;
     }
+
+    .signin-modal-mask {
+      position: absolute;
+      z-index: 1;
+      left: 22px;
+      top: 286px;
+      width: 359px;
+      height: 379px;
+      border-radius: 20px;
+      background: #fff;
+      pointer-events: none;
+    }
   </style>
 </head>
 <body>
@@ -1709,6 +1721,7 @@
   <div class="toast" id="toast"></div>
   <div class="modal" id="modal">
     <img class="signin-modal-bg" src="assets/cutouts/signin-modal-full.png" alt="签到弹窗背景" />
+    <div class="signin-modal-mask"></div>
     <video class="signin-modal-media" autoplay muted loop playsinline preload="metadata" aria-label="签到领积分">
       <source src="assets/motion/signin-modal.mp4" type="video/mp4" />
     </video>
