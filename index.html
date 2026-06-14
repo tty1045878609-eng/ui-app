@@ -1314,31 +1314,14 @@
 
     .modal.show { display: block; }
 
-    .signin-modal-bg-piece {
-      position: absolute;
-      z-index: 0;
-      overflow: hidden;
-      pointer-events: none;
-    }
-
-    .signin-modal-bg-piece img {
-      position: absolute;
-      left: 0;
-      top: 0;
+    .signin-modal-bg {
+      display: block;
       width: 402px;
       height: 874px;
       object-fit: cover;
       object-position: center top;
+      pointer-events: none;
     }
-
-    .signin-bg-top { left: 0; top: 0; width: 402px; height: 248px; }
-    .signin-bg-left { left: 0; top: 248px; width: 20px; height: 430px; }
-    .signin-bg-right { right: 0; top: 248px; width: 20px; height: 430px; }
-    .signin-bg-bottom { left: 0; top: 678px; width: 402px; height: 196px; }
-
-    .signin-bg-left img { top: -248px; }
-    .signin-bg-right img { left: auto; right: 0; top: -248px; }
-    .signin-bg-bottom img { top: -678px; }
 
     .signin-modal-media {
       position: absolute;
@@ -1725,10 +1708,7 @@
 
   <div class="toast" id="toast"></div>
   <div class="modal" id="modal">
-    <div class="signin-modal-bg-piece signin-bg-top"><img src="assets/cutouts/signin-modal-full.png" alt="" /></div>
-    <div class="signin-modal-bg-piece signin-bg-left"><img src="assets/cutouts/signin-modal-full.png" alt="" /></div>
-    <div class="signin-modal-bg-piece signin-bg-right"><img src="assets/cutouts/signin-modal-full.png" alt="" /></div>
-    <div class="signin-modal-bg-piece signin-bg-bottom"><img src="assets/cutouts/signin-modal-full.png" alt="" /></div>
+    <img class="signin-modal-bg" src="assets/cutouts/signin-modal-bg.png" alt="签到弹窗背景" />
     <video class="signin-modal-media" autoplay muted loop playsinline preload="metadata" aria-label="签到领积分">
       <source src="assets/motion/signin-modal.mp4" type="video/mp4" />
     </video>
