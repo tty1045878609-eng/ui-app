@@ -778,7 +778,7 @@
 
     .ai-hero-video {
       position: absolute;
-      z-index: 3;
+      z-index: 2;
       left: 0;
       top: 0;
       width: 402px;
@@ -789,6 +789,11 @@
       object-position: top center;
       pointer-events: none;
       mix-blend-mode: normal;
+    }
+
+    .ai-full .hotspot {
+      z-index: 20;
+      pointer-events: auto;
     }
 
     .shop-screen {
@@ -1561,7 +1566,7 @@
         <video class="ai-hero-video" autoplay muted loop playsinline preload="metadata">
           <source src="assets/motion/ai-cat.mp4" type="video/mp4" />
         </video>
-        <button class="hotspot" style="left: 10px; top: 58px; width: 42px; height: 42px;" data-screen="home">back</button>
+        <button class="hotspot" style="left: 10px; top: 58px; width: 132px; height: 42px;" data-screen="home">back</button>
         <button class="hotspot" style="left: 354px; top: 66px; width: 38px; height: 36px;" data-toast="更多">more</button>
         <button class="hotspot" style="left: 0; top: 116px; width: 402px; height: 58px;" data-toast="选择推荐问题">question chips</button>
         <button class="hotspot" style="left: 30px; top: 690px; width: 48px; height: 48px;" data-toast="语音输入">voice</button>
