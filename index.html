@@ -776,16 +776,17 @@
       background: #fff;
     }
 
-    .ai-cat-video {
+    .ai-hero-video {
       position: absolute;
       z-index: 3;
-      left: 134px;
-      top: 300px;
-      width: 134px;
-      height: 134px;
+      left: 0;
+      top: 0;
+      width: 402px;
+      height: 646px;
       border: 0;
-      border-radius: 50%;
+      border-radius: 0;
       object-fit: cover;
+      object-position: top center;
       pointer-events: none;
       mix-blend-mode: normal;
     }
@@ -1557,7 +1558,7 @@
     <section id="ai" class="screen ai-screen">
       <div class="ai-full">
         <img class="ai-full-img" src="assets/cutouts/ai-full.png" alt="AI问诊" />
-        <video class="ai-cat-video" autoplay muted loop playsinline preload="metadata">
+        <video class="ai-hero-video" autoplay muted loop playsinline preload="metadata">
           <source src="assets/motion/ai-cat.mp4" type="video/mp4" />
         </video>
         <button class="hotspot" style="left: 10px; top: 58px; width: 42px; height: 42px;" data-screen="home">back</button>
