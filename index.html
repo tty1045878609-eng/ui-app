@@ -1314,13 +1314,27 @@
 
     .modal.show { display: block; }
 
-    .signin-modal-media {
+    .signin-modal-bg {
       display: block;
       width: 402px;
       height: 874px;
       object-fit: cover;
+      object-position: center top;
+      pointer-events: none;
+    }
+
+    .signin-modal-media {
+      position: absolute;
+      z-index: 2;
+      left: 22px;
+      top: 286px;
+      display: block;
+      width: 359px;
+      height: 379px;
+      border-radius: 20px;
+      object-fit: cover;
       object-position: center center;
-      background: #fff url("assets/cutouts/signin-modal-full.png") center center / cover no-repeat;
+      background: transparent;
       pointer-events: none;
     }
   </style>
@@ -1694,7 +1708,8 @@
 
   <div class="toast" id="toast"></div>
   <div class="modal" id="modal">
-    <video class="signin-modal-media" autoplay muted loop playsinline preload="metadata" poster="assets/cutouts/signin-modal-full.png" aria-label="签到领积分">
+    <img class="signin-modal-bg" src="assets/cutouts/signin-modal-full.png" alt="签到弹窗背景" />
+    <video class="signin-modal-media" autoplay muted loop playsinline preload="metadata" aria-label="签到领积分">
       <source src="assets/motion/signin-modal.mp4" type="video/mp4" />
     </video>
     <button class="hotspot" style="left: 9px; top: 55px; width: 42px; height: 42px;" data-screen="home">back</button>
